@@ -7,4 +7,4 @@ try:
   origin = repo.create_remote(name='origin', url='https://github.com/jagg3127/GITPYTHON')
 except:
   origin = repo.remote(name='origin')
-origin.push()
+os.system("git push -u origin head")
