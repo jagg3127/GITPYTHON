@@ -3,5 +3,8 @@ import os
 repo = Repo.init(os.getcwd())
 repo.git.add(update=True)
 repo.index.commit("python")
-origin = repo.remote(name='origin', url='https://github.com/jagg3127/GITPYTHON')
+try:
+  origin = repo.create_remote(name='origin', url='https://github.com/jagg3127/GITPYTHON')
+except:
+  origin = repo.remote(name='origin')
 origin.push()
